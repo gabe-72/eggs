@@ -13,13 +13,14 @@ function getName(item) {
 
 export default class App extends React.Component {
   render() {
-    const filenames = ["chicken-eggs.jpg"];
+    const filenames = ["chicken-egg.jpg"];
 
     let images = [];
-    filenames.forEach((img) => {
+    filenames.forEach((img, i) => {
       images.push(<Item
         filename={img}
         name={getName(img)}
+        key={i}
       />)
     });
 
