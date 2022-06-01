@@ -1,4 +1,3 @@
-import React from "react";
 import "../stylesheets/Item.css";
 
 export default function Item(props) {
