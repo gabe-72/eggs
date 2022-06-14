@@ -4,7 +4,7 @@ import "../stylesheets/Item.css";
 export default function Item(props) {
   return (
     <div className="item">
-      <Link to={"/" + props.filename.split(".")[0]} className="item-link" >
+      <Link to={"/egg/" + props.filename.split(".")[0]} className="item-link" >
         <div className="item-overlay">{props.name}</div>
         <img
           className="item-img"

@@ -1,21 +1,18 @@
 * {
   color: #ffffff;
   box-sizing: border-box;
-  font-size: 3vh;
+  font-size: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #272727;
 }
 
 @font-face {
   font-family: "Znikomit";
   src: url("../assets/fonts/Znikomit.otf") format("opentype");
-}
-
-h1 {
-  font-family: "Znikomit";
-  font-size: 2em;
-  text-align: center;
-  margin: 0 0 10px 0;
-  padding: 0;
-  border-bottom: 1px solid;
 }
 
 body::-webkit-scrollbar {
@@ -24,4 +21,8 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background-color: #595858;
   border-radius: 10px;
+}
+
+.container {
+  padding: 5px 0;
 }
