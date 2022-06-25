@@ -9,10 +9,6 @@
   overflow: hidden;
 }
 
-.item-link {
-  display: inline-block;
-}
-
 .item-img {
   object-fit: contain;
   width: 100%;
@@ -21,7 +17,6 @@
 }
 
 .item-overlay {
-  z-index: 1;
   font-size: 1.8em;
   opacity: 0;
   position: absolute;
@@ -30,6 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .item-overlay, .item-img {
@@ -38,6 +34,7 @@
 
 .item-overlay:hover {
   opacity: 1;
+  cursor: pointer;
 }
 .item-overlay:hover + .item-img {
   filter: blur(5px);

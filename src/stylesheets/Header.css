@@ -1,12 +1,12 @@
 .header {
   display: flex;
   justify-content: space-evenly;
-  position: fixed;
+  position: sticky;
   top: 0;
   right: 0;
   gap: 5px;
   width: 30%;
-  margin: 0 0 5px 0;
+  margin-left: auto;
   z-index: 2;
 }
 

@@ -4,6 +4,7 @@
   font-size: 22px;
   margin: 0;
   padding: 0;
+  border: none;
 }
 
 body {
@@ -15,10 +16,10 @@ body {
   src: url("../assets/fonts/Znikomit.otf") format("opentype");
 }
 
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 10px;
 }
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: #595858;
   border-radius: 10px;
 }

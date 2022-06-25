@@ -14,6 +14,7 @@ function getName(item) {
 export default function Gridbox(props) {
   let rows= [];
   let images = [];
+  let itemPopups = [];
   props.filenames.forEach((img, i) => {
     if (i !== 0 && i % props.col === 0) {
       rows.push(<div className="grid-row" key={i / props.col}>
@@ -21,12 +22,19 @@ export default function Gridbox(props) {
       </div>);
       images = [];
     }
+
+    // name of the item in title case
+    let name = getName(img);
+
+    // add the Item component
     images.push(<Item
       filename={img}
-      name={getName(img)}
-      key={i % props.col}
+      name={name}
+      key={i}
     />)
   });
+
+  // add the leftover elements
   if (images.length !== 0) {
     rows.push(<div className="grid-row" key={props.filenames.length / props.col}>
       {images}
@@ -34,8 +42,11 @@ export default function Gridbox(props) {
   }
 
   return (
-    <div className="grid">
-      {rows}
+    <div>
+      <div className="grid">
+        {rows}
+      </div>
+      {itemPopups}
     </div>
   );
 };
