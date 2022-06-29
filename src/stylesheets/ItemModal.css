@@ -1,18 +1,44 @@
 /* background of the modal */
 .modal {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #0000007a;
-  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition-duration: 400ms;
   z-index: 2;
 }
 
 /* actual content */
 .modal-content {
+  position: relative;
   width: 70%;
-  margin: 10px auto;
-  padding: 20px;
-  background-color: #212121;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: #1b1b1b;
+  z-index: 2.5;
+}
+
+.open {
+  overflow-y: scroll;
+}
+.close {
+  top: 100%;
+  overflow-y: hidden;
+  transition-duration: 400ms;
+}
+
+
+.visible {
+  top: 0;
+}
+.invisible {
+  top: 100%;
+}
+.visible,
+.invisible {
+  transition-duration: 4s;
 }
 
 /* prevent body scroll when modal is open */

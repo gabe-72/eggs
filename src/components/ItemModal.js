@@ -1,8 +1,17 @@
+import { useEffect, useRef } from "react";
 import "../stylesheets/ItemModal.css";
 
 export default function ItemModal(props) {
-  return (props.visible)? (
-    <div className="modal" onClick={props.closeModal}>
+  const modalRef = useRef(null);
+  useEffect(() => {
+    modalRef.current.scrollTo(0, 0);
+  });
+
+  return (
+    <div className={`modal ${props.visible ? "open" : "close"}`}
+      onClick={props.closeModal}
+      ref={modalRef}
+    >
       <div className="modal-content">
         <h1>{props.name}</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod ligula eu porttitor elementum. Nullam aliquet erat in ante pulvinar interdum. Integer nisl ipsum, laoreet ornare commodo in, molestie a tortor. Maecenas in porta dolor. Aliquam sit amet odio odio. Morbi in tempor ante. Curabitur vehicula lacus eget turpis euismod luctus. Vestibulum eu mollis sapien, quis cursus magna. Sed mattis libero sit amet lacus placerat, id gravida turpis lacinia. Sed nulla nunc, varius sed elit ut, tempus tincidunt est.<br /><br />
@@ -12,5 +21,5 @@ Aliquam vestibulum nulla sit amet mauris congue, lobortis hendrerit massa vulput
 Donec id dictum ante. Donec ut lobortis ante, viverra congue augue. Nullam nec ipsum elementum, mattis metus ac, posuere ante. Morbi fringilla dictum sem, a dignissim tellus molestie nec. Curabitur lacus dolor, faucibus at lacinia bibendum, pretium nec ante. Integer augue lorem, pharetra eget scelerisque in, imperdiet elementum augue. Etiam pharetra convallis nibh sit amet pulvinar. Pellentesque a nulla condimentum, bibendum eros in, viverra nisi. Phasellus tincidunt augue ac velit sodales, vitae dapibus odio molestie. Ut in arcu non erat rutrum ullamcorper vel a nulla. Sed blandit ut justo vitae consectetur. Ut facilisis mauris nunc, a congue lacus blandit at. Curabitur nulla purus, eleifend ac metus eu, consectetur rutrum sapien.</p>
       </div>
     </div>
-  ) : "";
+  );
 }
